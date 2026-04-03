@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.magalona_friendskeeper">
+
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <!-- File Provider for images -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name="com.example.magalona_fk.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.example.magalona_fk.LoginActivity" />
+        <activity android:name="com.example.magalona_fk.SignupActivity" />
+        <activity android:name="com.example.magalona_fk.DashboardActivity" />
+        <activity android:name="com.example.magalona_fk.AddFriendActivity" />
+        <activity android:name="com.example.magalona_fk.FriendInfoActivity" />
+        <activity android:name="com.example.magalona_fk.FriendsListActivity" />
+        <activity android:name="com.example.magalona_fk.EditFriendActivity" />
+
+    </application>
+
+</manifest>
