@@ -33,7 +33,6 @@
                 android:layout_toEndOf="@id/ivFriendItemAvatar"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="16dp"
-                android:layout_toStartOf="@+id/ivEdit"
                 android:orientation="vertical">
 
                 <TextView
@@ -55,25 +54,6 @@
                     android:textSize="14sp" />
 
             </LinearLayout>
-
-            <ImageView
-                android:id="@+id/ivDelete"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:src="@android:drawable/ic_menu_delete"
-                app:tint="#FF0000" />
-
-            <ImageView
-                android:id="@+id/ivEdit"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_toStartOf="@id/ivDelete"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="12dp"
-                android:src="@android:drawable/ic_menu_edit"
-                app:tint="#4CAF50" />
 
         </RelativeLayout>
 

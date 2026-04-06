@@ -51,7 +51,6 @@ public class DashboardActivity extends AppCompatActivity {
         });
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-        // toolbar.inflateMenu(R.menu.dashboard_menu); // Removed to fix double menu
         toolbar.setOnMenuItemClickListener(item -> {
             int itemId = item.getItemId();
             if (itemId == R.id.action_logout) {
@@ -100,6 +99,13 @@ public class DashboardActivity extends AppCompatActivity {
                         })
                         .setNegativeButton("No", null)
                         .show();
+            }
+
+            @Override
+            public void onClick(Friend friend) {
+                Intent intent = new Intent(DashboardActivity.this, FriendInfoActivity.class);
+                intent.putExtra("friendId", friend.getId());
+                startActivity(intent);
             }
         });
         recyclerView.setAdapter(adapter);

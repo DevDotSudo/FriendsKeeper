@@ -87,6 +87,13 @@ public class FriendsListActivity extends AppCompatActivity {
                         .setNegativeButton("No", null)
                         .show();
             }
+
+            @Override
+            public void onClick(Friend friend) {
+                Intent intent = new Intent(FriendsListActivity.this, FriendInfoActivity.class);
+                intent.putExtra("friendId", friend.getId());
+                startActivity(intent);
+            }
         });
         recyclerView.setAdapter(adapter);
     }

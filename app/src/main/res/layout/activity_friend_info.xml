@@ -55,14 +55,6 @@
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/tvFriendSince"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Friend since: 2024"
-                android:textColor="#E0E0E0"
-                android:textSize="12sp" />
-
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

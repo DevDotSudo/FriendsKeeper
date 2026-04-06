@@ -21,6 +21,8 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.FriendView
     public interface OnFriendActionListener {
         void onEdit(Friend friend);
         void onDelete(Friend friend);
+
+        void onClick(Friend friend);
     }
 
     public FriendAdapter(List<Friend> friendList) {
@@ -68,12 +70,8 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.FriendView
             holder.ivAvatar.setImageResource(R.drawable.ic_default_avatar);
         }
 
-        holder.ivEdit.setOnClickListener(v -> {
-            if (listener != null) listener.onEdit(friend);
-        });
-
-        holder.ivDelete.setOnClickListener(v -> {
-            if (listener != null) listener.onDelete(friend);
+        holder.itemView.setOnClickListener( v -> {
+            if (listener != null) listener.onClick(friend);
         });
     }
 
@@ -84,15 +82,13 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.FriendView
 
     public static class FriendViewHolder extends RecyclerView.ViewHolder {
         TextView tvName, tvStatus;
-        ImageView ivAvatar, ivEdit, ivDelete;
+        ImageView ivAvatar;
 
         public FriendViewHolder(@NonNull View itemView) {
             super(itemView);
             tvName = itemView.findViewById(R.id.tvName);
             tvStatus = itemView.findViewById(R.id.tvStatus);
             ivAvatar = itemView.findViewById(R.id.ivFriendItemAvatar);
-            ivEdit = itemView.findViewById(R.id.ivEdit);
-            ivDelete = itemView.findViewById(R.id.ivDelete);
         }
     }
 }
